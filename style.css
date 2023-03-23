@@ -1,1 +1,12 @@
+.book-container {
+    border: 1px solid black;
+    height: 100px;
+    display: flex;
+    gap: 5px;
+}
+
+.book {
+    border: 1px solid black;
+    height: fit-content;
+}
 

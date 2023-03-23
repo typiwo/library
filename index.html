@@ -8,6 +8,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="book-container"></div>
+
+    <!-- For now, just make a form that allows us to add a new book-->
+    <!-- Later, make this better looking (maybe press the button then form pops up)-->
+    <form action="" method="get" id="new-book-form">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title"><br><br>
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author"><br><br>
+        <label for="num-pages"># of Pages:</label>
+        <input type="text" id="num-pages" name="num-pages"><br><br>
+        <label for="read">Read:</label>
+        <input type="text" id="read" name="read">
+    </form>
+
+    <button type="submit" form="new-book-form" value="Submit" id="new-book-button">Submit</button>
+
     
 </body>
+
+<!--Link to external JavaScript file, MUST GO AT END!-->
+<script src="script.js"></script>
 </html>
