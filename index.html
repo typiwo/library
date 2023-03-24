@@ -9,21 +9,17 @@
 </head>
 <body>
 
-    <div class="book-container"></div>
-
     <button id="new-book-button">New Book</button>
+
+    <div class="book-container"></div>
 
     <div class="form-popup">
 
         <form action="" method="get" id="new-book-form">
-            <label for="title">Title:</label>
-            <input type="text" id="title" name="title"><br><br>
-            <label for="author">Author:</label>
-            <input type="text" id="author" name="author"><br><br>
-            <label for="num-pages"># of Pages:</label>
-            <input type="text" id="num-pages" name="num-pages"><br><br>
-            <label for="read">Read:</label>
-            <input type="text" id="read" name="read">
+            <input type="text" id="title" name="title" placeholder="title"><br><br>
+            <input type="text" id="author" name="author" placeholder="author"><br><br>
+            <input type="text" id="num-pages" name="num-pages" placeholder="# of pages"><br><br>
+            <input type="text" id="read" name="read" placeholder="have you read this?">
         </form>
 
         <button type="submit" form="new-book-form" value="Submit" id="add-book-button">Add Book</button>
