@@ -10,3 +10,9 @@
     height: fit-content;
 }
 
+/* new book form pop-up */
+.form-popup {
+    display: none;  /* hidden by default */
+    position: fixed;
+}
+

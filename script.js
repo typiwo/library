@@ -1,8 +1,10 @@
 // Load in the book container
 const bookContainer = document.querySelector('.book-container');
 
-// Load in New Book button
+// Load in buttons button
 const newBookButton = document.querySelector('#new-book-button');
+const addBookButton = document.querySelector('#add-book-button');
+const cancelButton = document.querySelector('#cancel-button');
 
 // Define an array to store books
 let myLibrary = [];
@@ -69,10 +71,19 @@ function displayBooks(bookList)
     }
 }
 
-// New Book Button Functionality
+// BUTTON FUNCTIONALITY
+// Opens the new book form
 newBookButton.addEventListener("click", newBookButtonClick, false);
 
-function newBookButtonClick(event)
+function newBookButtonClick()
+{
+    document.querySelector(".form-popup").style.display = "block";
+}
+
+// Adds a book
+addBookButton.addEventListener("click", addBookButtonClick, false);
+
+function addBookButtonClick(event)
 {
     event.preventDefault();
 
@@ -95,8 +106,19 @@ function newBookButtonClick(event)
 
     // Reset form after click
     form.reset();
+}
 
+// Cancel button -- closes form
+cancelButton.addEventListener("click", cancelButtonClick, false);
+
+function cancelButtonClick()
+{
+    const form = document.querySelector('form');
     
+    // reset form
+    form.reset();
+    // close form
+    document.querySelector(".form-popup").style.display = "none";
 }
 
 // Create some books to add to myLibrary
