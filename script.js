@@ -15,7 +15,7 @@ function Book(title, author, pageNum, hasRead)
     this.title = title
     this.author = author
     this.pageNum = pageNum
-    this.hasRead = hasRead
+    this.hasRead = false;
 }
 
 // Function to add a new book to library
@@ -81,7 +81,19 @@ function createBookCard(book)
         bookContainer.removeChild(bookDiv);
         myLibrary.splice(bookDiv, 1);
     }
-    )
+    );
+
+    // Add functionality to the read checkbox
+    readCheckBox.addEventListener('change', function() {
+        if (this.checked) 
+        {
+            book.hasRead = true;
+        } 
+        else 
+        {
+            book.hasRead = false;
+        }
+      });
 
 }
 
