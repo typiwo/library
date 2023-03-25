@@ -15,7 +15,7 @@ function Book(title, author, pageNum, hasRead)
     this.title = title
     this.author = author
     this.pageNum = pageNum
-    this.hasRead = false;
+    this.hasRead = hasRead;
 }
 
 // Function to add a new book to library
@@ -42,9 +42,18 @@ function createBookCard(book)
     bookAuthor.setAttribute('id', 'book-card-author');
     bookAuthor.textContent = book.author;
 
+    // Create a div for the page number
+    let pageNumDiv = document.createElement("div");
+    pageNumDiv.setAttribute('id', 'book-card-page-num-div');
+    let pageNumText = document.createElement("div");
+    pageNumText.setAttribute('id', 'book-card-page-num-text');
+    pageNumText.textContent = "Pages: ";
     let bookNumPages = document.createElement('div');
     bookNumPages.setAttribute('id', 'book-card-num-pages');
     bookNumPages.textContent = book.pageNum;
+
+    pageNumDiv.appendChild(pageNumText);
+    pageNumDiv.appendChild(bookNumPages);
 
     // Create a checkbox for the "hasRead" attribute
     let readDiv = document.createElement("div");
@@ -55,6 +64,12 @@ function createBookCard(book)
     let readCheckBox = document.createElement("INPUT");
     readCheckBox.setAttribute("type", "checkbox");
     readCheckBox.setAttribute('id', 'book-card-read-checkbox');
+
+    // If they read the book, check the checkbox
+    if (book.hasRead == true)
+    {
+        readCheckBox.checked = true;
+    }
 
     readDiv.appendChild(readText);
     readDiv.appendChild(readCheckBox);
@@ -68,7 +83,7 @@ function createBookCard(book)
     // Append the info divs to the bookDiv
     bookDiv.appendChild(bookTitle);
     bookDiv.appendChild(bookAuthor);
-    bookDiv.appendChild(bookNumPages);
+    bookDiv.appendChild(pageNumDiv);
     bookDiv.appendChild(readDiv);
     bookDiv.appendChild(removeBookButton);
 
@@ -129,11 +144,18 @@ function addBookButtonClick(event)
     const titleInput = document.querySelector('#title');
     const authorInput = document.querySelector('#author');
     const numPagesInput = document.querySelector('#num-pages');
-    const readInput = document.querySelector('#read');
+    const readInput = document.querySelector('#read-checkbox');
+
+    // This checks if the checkbox is checked or not
+    let hasReadStatus = false;
+    if (readInput.checked) {
+        hasReadStatus= true;
+    }
 
 
     // Create a new Book object
-    let newBook = new Book(titleInput.value, authorInput.value, numPagesInput.value, readInput.value);
+    let newBook = new Book(titleInput.value, authorInput.value, numPagesInput.value, hasReadStatus);
+    console.log(newBook);
 
     // Create a new card for the book
     createBookCard(newBook);
@@ -160,10 +182,10 @@ function cancelButtonClick()
 
 
 
-// Create some books to add to myLibrary
-const book1 = new Book('book1', 'tyler', '223', 'yes');
-const book2 = new Book('book2', 'aaron', '125', 'no');
-const book3 = new Book('book3', 'mike', '412', 'yes');
+// Create some example books to add to myLibrary
+const book1 = new Book('Demons', 'Fyodor Dostoyevsky', '223', false);
+const book2 = new Book('Slaughterhouse-Five', 'Kurt Vonnegut', '275', false);
+const book3 = new Book('Frankenstein', 'Mary Shelley', '161', false);
 
 // Add books to myLibrary
 addBookToLibrary(book1);
@@ -171,4 +193,5 @@ addBookToLibrary(book2);
 addBookToLibrary(book3);
 
 displayBooks(myLibrary);
+
 

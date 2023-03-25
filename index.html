@@ -19,7 +19,10 @@
             <input type="text" id="title" name="title" placeholder="title"><br><br>
             <input type="text" id="author" name="author" placeholder="author"><br><br>
             <input type="text" id="num-pages" name="num-pages" placeholder="# of pages"><br><br>
-            <input type="text" id="read" name="read" placeholder="have you read this?">
+            <div id="form-read-div">
+                <div id="form-read-status-text">Read: </div>
+                <input type="checkbox" id="read-checkbox" name="read-checkbox">
+            </div>
         </form>
 
         <button type="submit" form="new-book-form" value="Submit" id="add-book-button">Add Book</button>

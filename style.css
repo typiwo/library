@@ -27,9 +27,19 @@
 
 #book-card-title {
     background-color: white;
+    font-style: italic;
 }
 
 #book-card-author {
+    background-color: white;
+}
+
+#book-card-page-num-div {
+    display: flex;
+    align-items: center;
+}
+
+#book-card-page-num-text {
     background-color: white;
 }
 
@@ -86,5 +96,9 @@ form {
 
 input {
     border-radius: 5px;
+}
+
+#form-read-div {
+    display: flex;
 }
 
