@@ -2,6 +2,8 @@
     box-sizing: border-box;
     font-family:'Courier New', Courier, monospace;
     background-color: antiquewhite;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -11,6 +13,9 @@ body {
     gap: 20px;
 }
 
+button:hover {
+    cursor: pointer;
+}
 
 .header {
     background-color: white;
@@ -32,6 +37,11 @@ body {
 #login-button {
     border-radius: 5px;
     padding: 10px 20px 10px 20px;
+    background-color: gainsboro;
+}
+
+#login-button:hover {
+    background-color: rgb(170, 169, 169);
 }
 
 #new-book-button {
@@ -40,6 +50,10 @@ body {
     font-family: 'Courier New', Courier, monospace;
     border-radius: 5px;
     width: fit-content;
+}
+
+#new-book-button:hover {
+    background-color: rgb(223, 219, 219);
 }
 
 .book-container {
@@ -51,6 +65,10 @@ body {
     flex-wrap: wrap;
     padding: 25px;
     padding-top: 0px;
+}
+
+button {
+    border:none;
 }
 
 .book {
@@ -109,6 +127,11 @@ body {
     font-family: 'Courier New', Courier, monospace;
     border-radius: 5px;
     margin-top: 15px;
+    width: 90px;
+}
+
+#add-book-button:hover {
+    background-color: rgb(118, 134, 91);
 }
 
 #cancel-button {
@@ -116,6 +139,11 @@ body {
     background-color: rgb(231, 22, 22);
     font-family: 'Courier New', Courier, monospace;
     border-radius: 5px;
+    width: 90px;
+}
+
+#cancel-button:hover {
+    background-color: rgb(185, 17, 17);
 }
 
 #remove-book-button {
@@ -125,6 +153,10 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: rgb(231, 22, 22);
+}
+
+#remove-book-button:hover {
+    background-color: rgb(185, 17, 17);
 }
 
 /* new book form pop-up */
@@ -151,8 +183,21 @@ form {
     background-color: white;
 }
 
+#form-header {
+    background-color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
 input {
     border-radius: 5px;
+    border: none;
+    padding: 10px;
+}
+
+#title, #author, #num-pages {
+    width: 100%;
 }
 
 #form-read-div {
@@ -165,4 +210,12 @@ input {
 #form-read-status-text {
     background-color: white;
 }
+
+#read-checkbox {
+    font:inherit;
+    width: 1.15em;
+    height: 1em;
+}
+
+
 

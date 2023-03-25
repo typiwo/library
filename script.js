@@ -63,7 +63,7 @@ function createBookCard(book)
     readText.textContent = 'Read: ';
     let readCheckBox = document.createElement("INPUT");
     readCheckBox.setAttribute("type", "checkbox");
-    readCheckBox.setAttribute('id', 'book-card-read-checkbox');
+    readCheckBox.setAttribute('id', 'read-checkbox');
 
     // If they read the book, check the checkbox
     if (book.hasRead == true)
