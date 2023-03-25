@@ -37,6 +37,16 @@
     background-color: white;
 }
 
+#book-card-read-div {
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+#book-card-read-text {
+    background-color: white;
+}
+
 
 #new-book-button {
     padding: 10px;

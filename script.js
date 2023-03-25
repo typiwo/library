@@ -47,8 +47,17 @@ function createBookCard(book)
     bookNumPages.textContent = book.pageNum;
 
     // Create a checkbox for the "hasRead" attribute
-    let x = document.createElement("INPUT");
-    x.setAttribute("type", "checkbox");
+    let readDiv = document.createElement("div");
+    readDiv.setAttribute('id', 'book-card-read-div');
+    let readText = document.createElement("div");
+    readText.setAttribute('id', 'book-card-read-text');
+    readText.textContent = 'Read: ';
+    let readCheckBox = document.createElement("INPUT");
+    readCheckBox.setAttribute("type", "checkbox");
+    readCheckBox.setAttribute('id', 'book-card-read-checkbox');
+
+    readDiv.appendChild(readText);
+    readDiv.appendChild(readCheckBox);
 
     // Create a 'remove book' button
     let removeBookButton = document.createElement('button');
@@ -60,13 +69,12 @@ function createBookCard(book)
     bookDiv.appendChild(bookTitle);
     bookDiv.appendChild(bookAuthor);
     bookDiv.appendChild(bookNumPages);
-    bookDiv.appendChild(x);
+    bookDiv.appendChild(readDiv);
     bookDiv.appendChild(removeBookButton);
 
     // Append the newly created bookDiv to the bookContainer
     bookContainer.appendChild(bookDiv);
 
-    // I need a way to just get rid of this whole bookDiv if remove is clicked
     // Add functionality to remove book
     removeBookButton.addEventListener("click", () =>
     {
