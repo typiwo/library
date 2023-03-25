@@ -100,5 +100,12 @@ input {
 
 #form-read-div {
     display: flex;
+    justify-content:center;
+    background-color: white;
+    align-items: center;
+}
+
+#form-read-status-text {
+    background-color: white;
 }
 
