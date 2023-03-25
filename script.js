@@ -46,18 +46,34 @@ function createBookCard(book)
     bookNumPages.setAttribute('id', 'book-card-num-pages');
     bookNumPages.textContent = book.pageNum;
 
-    let bookHasRead = document.createElement('div');
-    bookHasRead.setAttribute('id', 'book-card-has-read');
-    bookHasRead.textContent = book.hasRead;
+    // Create a checkbox for the "hasRead" attribute
+    let x = document.createElement("INPUT");
+    x.setAttribute("type", "checkbox");
+
+    // Create a 'remove book' button
+    let removeBookButton = document.createElement('button');
+    removeBookButton.setAttribute('id', 'remove-book-button');
+    removeBookButton.textContent = 'Remove';
+
 
     // Append the info divs to the bookDiv
     bookDiv.appendChild(bookTitle);
     bookDiv.appendChild(bookAuthor);
     bookDiv.appendChild(bookNumPages);
-    bookDiv.appendChild(bookHasRead);
+    bookDiv.appendChild(x);
+    bookDiv.appendChild(removeBookButton);
 
     // Append the newly created bookDiv to the bookContainer
     bookContainer.appendChild(bookDiv);
+
+    // I need a way to just get rid of this whole bookDiv if remove is clicked
+    // Add functionality to remove book
+    removeBookButton.addEventListener("click", () =>
+    {
+        bookContainer.removeChild(bookDiv);
+        myLibrary.splice(bookDiv, 1);
+    }
+    )
 
 }
 
@@ -95,6 +111,7 @@ function addBookButtonClick(event)
     const numPagesInput = document.querySelector('#num-pages');
     const readInput = document.querySelector('#read');
 
+
     // Create a new Book object
     let newBook = new Book(titleInput.value, authorInput.value, numPagesInput.value, readInput.value);
 
@@ -120,6 +137,8 @@ function cancelButtonClick()
     // close form
     document.querySelector(".form-popup").style.display = "none";
 }
+
+
 
 // Create some books to add to myLibrary
 const book1 = new Book('book1', 'tyler', '223', 'yes');
