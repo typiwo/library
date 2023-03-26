@@ -13,10 +13,7 @@ body {
     gap: 20px;
 }
 
-button:hover {
-    cursor: pointer;
-}
-
+/* HEADER */
 .header {
     background-color: white;
     width: 100%;
@@ -44,12 +41,21 @@ button:hover {
     background-color: rgb(170, 169, 169);
 }
 
+
+/* BODY */
+
+button:hover {
+    cursor: pointer;
+}
+
 #new-book-button {
     padding: 10px;
     background-color: white;
     font-family: 'Courier New', Courier, monospace;
     border-radius: 5px;
     width: fit-content;
+    font-size: large;
+    font-weight: bold;
 }
 
 #new-book-button:hover {
@@ -57,14 +63,14 @@ button:hover {
 }
 
 .book-container {
-    height: fit-content;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 75px;
     width: 100%;
-    flex-wrap: wrap;
     padding: 25px;
     padding-top: 0px;
+    padding-left: 200px;
+    padding-right: 200px;
 }
 
 button {
@@ -76,12 +82,12 @@ button {
     background-color: white;
     border-radius: 5px;
     padding: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    max-width: 400px;
-    min-width: 200px;
+    gap: 15px;
     box-shadow: 5px 5px;
 }
 
@@ -89,6 +95,7 @@ button {
     background-color: white;
     font-style: italic;
     text-align: center;
+    font-size: large;
 }
 
 #book-card-author {
@@ -179,6 +186,7 @@ button {
     margin: auto;
 }
 
+
 form {
     background-color: white;
 }
@@ -217,5 +225,4 @@ input {
     height: 1em;
 }
 
-
-
+  
