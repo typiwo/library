@@ -183,7 +183,7 @@ function cancelButtonClick()
 
 
 // Create some example books to add to myLibrary
-const book1 = new Book('Demons', 'Fyodor Dostoyevsky', '223', false);
+const book1 = new Book('Demons', 'Fyodor Dostoyevsky', '748', false);
 const book2 = new Book('Slaughterhouse-Five', 'Kurt Vonnegut', '275', false);
 const book3 = new Book('Frankenstein', 'Mary Shelley', '161', false);
 
